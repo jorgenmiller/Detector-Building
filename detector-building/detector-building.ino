@@ -28,7 +28,7 @@ int min_green = 14;
 int max_green = 16;
 int min_blue = 0;
 int max_blue = 14;
-  
+
 void setup() {  // runs on upload or press of reset button
   // declare LED pins to be outputs
   pinMode(led_red, OUTPUT);
@@ -37,7 +37,7 @@ void setup() {  // runs on upload or press of reset button
 
   // begin serial communication at 9600 bits per second
   Serial.begin(9600);
-  
+
   // labels for serial plotter
   Serial.print("Termperature(ºC)");
   Serial.print("\t");
@@ -48,12 +48,13 @@ void loop() { // runs over and over again
   int pin_value;
   float temp;
 
-  // read voltage from temperature sensor
+  // read voltage from sensor and convert to ºC
   pin_value = analogRead(analog_temp);
   temp = (.105 * pin_value); // calibrated equation
-  
+
+  // convert through Farenheit
 //  int temp_F;
-//  temp_F = (125*pin_value)>>8;
+//  temp_F = (pin_value / 2);
 //  temp = (temp_F - 32) * 5/9;
 
   // send temperature and voltage via serial communication
@@ -61,7 +62,7 @@ void loop() { // runs over and over again
   Serial.print("\t");
   Serial.print(pin_value);
   Serial.println();
-  
+
   //turn off all LEDs
   digitalWrite(led_red, LOW);
   digitalWrite(led_green, LOW);
