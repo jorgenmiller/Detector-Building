@@ -1,7 +1,7 @@
 /*
 Detector Building
 made by Jørgen Miller in Nov 2019
-for UHS Science Olympiad
+UHS Science Olympiad
 
 USE
 reads temperature in ºC using an analog temperature sensor
