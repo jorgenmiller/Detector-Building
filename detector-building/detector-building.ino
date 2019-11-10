@@ -52,7 +52,7 @@ void loop() { // runs over and over again
   pin_value = analogRead(analog_temp);
   temp = (.105 * pin_value); // calibrated equation
 
-  // convert through Farenheit
+  // alternatively convert through Farenheit
 //  int temp_F;
 //  temp_F = (pin_value / 2);
 //  temp = (temp_F - 32) * 5/9;
