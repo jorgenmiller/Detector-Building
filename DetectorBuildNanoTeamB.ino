@@ -41,8 +41,8 @@ int resolution = 10; //maximum for Nano
 int decimals = 4;
 
 //calibrated equation
-float m = 101.0394241;
-float b = -48.97879291;
+float m = 97.80223093;
+float b = -46.38862655;
 
 //variables used for smoothing voltage readings
 const int num_readings = 100; //last n values to be averaged
