@@ -2,7 +2,7 @@
 Detector Building
 UHS Science Olympiad
 Team #24
-GREEN
+RED
 
 FUNCTION
 reads temperature in ºC using an analog temperature sensor
@@ -41,8 +41,8 @@ int resolution = 10; //maximum for Nano
 int decimals = 4;
 
 //calibrated equation
-float m = 96.65939772;
-float b = -44.63689168;
+float m = 101.0394241;
+float b = -48.97879291;
 
 //variables used for smoothing voltage readings
 const int num_readings = 100; //last n values to be averaged
