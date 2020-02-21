@@ -1,9 +1,10 @@
 /*
 Detector Building
-made by Jørgen Miller in Nov 2019
 UHS Science Olympiad
+Team #24
+GREEN
 
-USE
+FUNCTION
 reads temperature in ºC using an analog temperature sensor
 outputs voltage and temperature reading
 turns on LEDs according to defined temperature ranges
@@ -16,13 +17,13 @@ D3 -> green LED -> 410Ω  -> GND
 D4 -> blue LED -> 410Ω  -> GND
 */
 
-// sensor and LED pins
+//sensor and LED pins
 int analog_temp = A1;  // A1, output voltage of temperature sensor
 int led_red = 2;      // D2, anode of red LED
 int led_green = 3;    // D3, anode of green LED
 int led_blue = 4;     // D4, anode of blue LED
 
-// LED temperature ranges in ºC
+//LED temperature ranges in ºC
 int min_red = 30;
 int max_red = 75;
 int min_green = 20;
@@ -37,18 +38,19 @@ float ref_voltage = 3.3;
 int resolution = 10; //maximum for Nano
 
 //precision of serial monitor (decimal places)
-int decimals = 6;
+int decimals = 4;
 
 //calibrated equation
 float m = 96.65939772;
 float b = -44.63689168;
 
 //variables used for smoothing voltage readings
-const int num_readings = 100;
+const int num_readings = 100; //last n values to be averaged
 int read_index = 0;
 int pin_value_readings[num_readings];
 float pin_value_total = 0;
 
+//mesaurement variables
 float pin_value;
 float pin_value_smoothed;
 float voltage;
@@ -136,5 +138,6 @@ void loop() { // runs over and over again
     digitalWrite(led_blue, HIGH);
   }
 
-  delay(100); // wait n/1000 seconds
+  //wait n milliseconds before next measurement
+  delay(100);
 }
